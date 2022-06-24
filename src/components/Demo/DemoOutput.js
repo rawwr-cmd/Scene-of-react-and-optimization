@@ -6,4 +6,7 @@ const DemoOutput = (props) => {
   return <MyParagraph>{props.show ? "This is the start!" : ""}</MyParagraph>;
 };
 
-export default DemoOutput;
+//React.memo is just for the functional component, for the class based component it doesn't work
+//React.memo only works when the props value changes and not when they are same and the parent component changes
+//this will work for the primitive types like string, number, boolean, null, undefined
+export default React.memo(DemoOutput);
